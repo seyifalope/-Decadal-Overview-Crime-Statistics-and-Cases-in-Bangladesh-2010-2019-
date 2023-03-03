@@ -1,14 +1,9 @@
-# -*- coding: utf-8 -*-
+
 """
 Created on Wed Mar  1 22:12:03 2023
 
 @author: SEYI FALOPE 
 """
-
-# Github Link:
-# Dataset Link:https://www.kaggle.com/datasets/firozkabir1/crime-statistics-of-bangladesh-2010-2019
-
-
 # Importing necessary Python libraries for exploration and visualization
 import numpy as np
 import pandas as pd
