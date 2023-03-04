@@ -4,6 +4,27 @@ Created on Wed Mar  1 22:12:03 2023
 
 @author: SEYI FALOPE 
 """
+
+"""
+SUMMARY OF THE DATASET
+The dataset illustrates the crime statistics of various crimes and their crime cases 
+in Bangladesh, a densely populated country in Asia across a decade period, 
+from year 2010 to 2019.
+
+To visulaizing and draw insights from the data,3 types of visualization methods will be
+employed, Namely:
+    
+Line plot: A line plot is used to displays data points over a period of time, hence line 
+plot be employed to show crime cases for each crime over the decade    
+
+Pie Chart: A pie chart helps to displays categories of elements in relative proportion 
+to each other. This will be employed to show the proportion of each crime in relation to
+each other
+
+Bar Chart: A bar chart helps us compare different data points together. This will be employed
+to show the compare the total crimes case across the decade
+"""
+
 # Importing necessary Python libraries for exploration and visualization
 import numpy as np
 import pandas as pd
@@ -94,6 +115,21 @@ plot_line(crime.index, crime['Police Assault'], 'Years', 'No of Crime Cases',
 
 # Showing the Plot
 plt.show()
+
+"""
+INTERPRETING THE LINE PLOT
+The line graph provides insight for 4 crimes: robbery, kidnapping, murder and police assault
+and thier total reported cases in Bangladesh for the year 2010 to 2019. From the graph, 
+it can be drawn that the number of robbery cases remained relatively stable 
+from 2010 to 2013 with a slight increase in 2014 followed by a decrease in the following
+years. The murder cases appear to be relatively fluctuating from year to year. However,
+there is a slight increase in the year 2014, followed by a decrease in 2015 and a sharp 
+ increase in 2018. Kidnapping and police incidents appear to be stable over
+the years. However, it shows a slight increase in 2014 and 2018 for both crimes
+ 
+The plot also shows that all the 4 crime cases experienced decline in year 2019
+"""
+
 
 
 """
@@ -206,9 +242,14 @@ def plot_bar(x_variable, y_variable, xlabel, ylabel, title,  xticks=None, **othe
 plot_bar(years, crime_year, 'Years', 'No of Cases',
          'Crime Statistics Of Bangladesh 2010-2019', True, color='red')
 
+"""
+INTERPRETING THE BAR CHART:
+The bar chart shows that the crime rates were stagnant/increasing from year 2010 t0 2013 
+and starting  decreasing afterwqrds from year 2014 t0 2018. From the graph, it 
+can be deduce that 2013 had the highest crime reported incident and 2019 has the lowest 
+reported crime rate
+"""    
 
-plt.boxplot(crime['Year'])
-plt.show()
 
 
 
