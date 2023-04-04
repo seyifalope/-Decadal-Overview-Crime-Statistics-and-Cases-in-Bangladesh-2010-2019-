@@ -204,11 +204,6 @@ plt.ylabel('Co2 Emmision')
 plt.show()
 
 
-urban_pop.describe()
-urban_pop.mean()
-urban_pop.median()
-urban_pop.std()
-
 
 
     
