@@ -104,7 +104,7 @@ urban_pop = countries.iloc[[1, 6, 11, 16, 21], [
 urban_pop = urban_pop.apply(pd.to_numeric)
 # converting index values to numeric format
 urban_pop.index = pd.to_numeric(urban_pop.index)
-urban_pop
+print(urban_pop)
 
 # creating a dataframe for all selected countries on c02 emission
 # dataframe for all years in study
