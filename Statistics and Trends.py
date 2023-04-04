@@ -114,7 +114,7 @@ co2 = countries.iloc[[1, 6, 11, 16, 21], [1, 5, 9, 13, 17, 21, 25]]
 co2 = co2.apply(pd.to_numeric)  # converting to data type to a numeric format
 # converting index values to numeric format
 co2.index = pd.to_numeric(co2.index)
-co2
+print(co2)
 
 # creating a dataframe for all selected countries on electric consumption
 # dataframe for all years in study
