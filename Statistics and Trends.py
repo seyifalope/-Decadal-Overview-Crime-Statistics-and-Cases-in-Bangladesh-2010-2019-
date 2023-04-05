@@ -48,7 +48,8 @@ def read_data(filename, **others):
 
 
 # Reading in our datasets for analysis
-world_data, world_data2 = read_data(r"C:\Users\USER\Desktop\World Bank Data.csv")
+world_data, world_data2 = read_data(
+    r"C:\Users\USER\Desktop\World Bank Data.csv")
 print(world_data)
 
 # For this analysis, we will make do with 4 indicators of choice
@@ -181,63 +182,110 @@ print('Kurtosis:', stats.kurtosis(forest))  # Kurtosis for forest area
 Plotting a grouped bar of CO2 emission for the 7 nations  in 5 years increments
 from the year 1990 to 2010 
 """
+# choosing a style for the bar chart
 plt.style.use('ggplot')
+
+# plotting the bar chart for Urban Population
 co2.T.plot(kind='bar')
+
+# setting the Legend title, xlabel and ylabel
 plt.title('Nations co2 emission in 5 years increments', size=12, weight='bold')
 plt.xlabel('Countries', weight='bold')
 plt.ylabel('Co2 emission (kt)', weight='bold')
-plt.show()
+
+# Saving the plotted line Graph
 plt.savefig('co2_barplot.png')
 
+# Showing the line plot plot
+plt.show()
 
 """
 plotting a line plot showing Trend in Urban Population for the selected countries
 """
+# Creating a figure size for the graph
 plt.figure(figsize=(10, 6))
+
+# choosing a style for the line plot
 plt.style.use('ggplot')
+
+# plotting the line plot for Urban Population
 urban_pop.plot()
+
+# setting the Legend title, xlabel and ylabel
 plt.title('Urban Population Trend from 1990-2010', size=15, weight='bold')
 plt.xlabel('Year', weight='bold')
 plt.ylabel('Urban Population', weight='bold')
 plt.xticks([1990, 1995, 2000, 2005, 2010])
 plt.legend(bbox_to_anchor=(1.0, 1))
-plt.show()
+
+# Saving the plotted line Graph
 plt.savefig('urban_lineplot.png')
 
+# Showing the line plot plot
+plt.show()
 
 """
 plotting a line plot showing Trend in Electric power consumption (kWh per capita)
 """
+# choosing a style for the line plot
 plt.style.use('ggplot')
+
+# plotting the line plot for Electric power consumption (kWh per capita)
 electric.plot()
+
+# setting the title, xlabel and ylabel
 plt.title('Electric power consumption from 1990 to 2010',
           size='12', weight='bold')
 plt.xlabel('Year', weight='bold')
 plt.ylabel('electric consuption per capital', weight='bold')
 plt.xticks([1990, 1995, 2000, 2005, 2010])
 plt.legend(bbox_to_anchor=(1.0, 1))
-plt.show()
+
+# Saving the plotted line Graph
 plt.savefig('electric_lineplot.png')
+
+# Showing the line plot plot
+plt.show()
+
 
 """
 Plotting a scatter plot to show relationship for Co2 emmission and Forest Area for China
 """
+# choosing a style for the plot
 plt.style.use('ggplot')
+
+# plotting the scatter plot
 plt.scatter(forest_allyears['China'], co2_allyears['China'])
+
+# setting the , title, xlabel and ylabel
 plt.title('Relationship between Forest Area and Co2 emmission in China', size='11')
 plt.xlabel('Forest area (% of land area)', fontsize=10, weight='bold')
 plt.ylabel('Co2 Emmision', fontsize=10, weight='bold')
-plt.show()
+
+# Saving the plotted scatter plot
 plt.savefig("scatter_china.png")
+
+# Showing the scatter plot
+plt.show()
 
 
 """
 Plotting a scatter plot to show relationship for Co2 emmission and Forest Area for Brazil
 """
+# choosing a style for the plot
 plt.style.use('ggplot')
+
+# Plotting the scatter plot
 plt.scatter(forest_allyears['Brazil'], co2_allyears['Brazil'])
-plt.title('Relationship between Forest Area and Co2 emmission in Brazil', weight='bold')
+
+# Setting the , title, xlabel and ylabel
+plt.title('Relationship between Forest Area and Co2 emmission in Brazil',
+          fontsize=11, weight='bold')
 plt.xlabel('Forest area (% of land area)', weight='bold')
 plt.ylabel('Co2 Emmision', weight='bold')
-plt.show()
+
+# Saving the plotted scatter plot
 plt.savefig('scatter_brazil.png')
+
+# Showing the scatter plot
+plt.show()
