@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import skew, kurtosis
-import stats 
+import stats
 
 
 """
@@ -104,7 +104,7 @@ Creating a dataframe for all selected countries on Urban population
 # dataframe for all years in study
 urban_pop_allyears = countries.iloc[1:, [0, 4, 8, 12, 16, 20, 24]]
 # data frame for 5 years increment
-urban_pop = countries.iloc[[1, 6, 11, 16, 21], [0, 4, 8, 12, 16, 20, 24]]  
+urban_pop = countries.iloc[[1, 6, 11, 16, 21], [0, 4, 8, 12, 16, 20, 24]]
 # converting to dataframe data type to a numeric format
 urban_pop = urban_pop.apply(pd.to_numeric)
 # converting index values to numeric format
@@ -155,26 +155,28 @@ Checking Statistical overview for the four selected indicators
 across the 7 selected countries.
 """
 # statistical function for urban population
-#Checking describe function for urban population
+# Checking describe function for urban population
 print(urban_pop.describe())
-print('Skewness:',stats.skew(urban_pop))# skweness for urban population
-print('Kurtosis:',stats.kurtosis(urban_pop)) # Kurtosis for urban population
+print('Skewness:', stats.skew(urban_pop))  # skweness for urban population
+print('Kurtosis:', stats.kurtosis(urban_pop))  # Kurtosis for urban population
 
 # Statistical function for c02 emission
-print(co2.describe()) # describe function for co2 emission
-print('Skewness:',stats.skew(co2))# skweness for co2 emission
-print('Kurtosis:',stats.kurtosis(co2)) # Kurtosis for co2 emission
+print(co2.describe())  # describe function for co2 emission
+print('Skewness:', stats.skew(co2))  # skweness for co2 emission
+print('Kurtosis:', stats.kurtosis(co2))  # Kurtosis for co2 emission
 
 
 # Statistical function for electric power consumption (kWh per capita)'
-print(electric.describe()) # describe function for electric power consumption
-print('Skewness:',stats.skew(electric))# skweness for electric power consumption
-print('Kurtosis:',stats.kurtosis(electric)) # Kurtosis for electric power consumption
+print(electric.describe())  # describe function for electric power consumption
+# skweness for electric power consumption
+print('Skewness:', stats.skew(electric))
+# Kurtosis for electric power consumption
+print('Kurtosis:', stats.kurtosis(electric))
 
 # Statistical function for Forest area (% of land area)
-print(forest.describe()) # describe function for forest area
-print('Skewness:',stats.skew(forest))# skweness for forest area
-print('Kurtosis:',stats.kurtosis(forest)) # Kurtosis for forest area
+print(forest.describe())  # describe function for forest area
+print('Skewness:', stats.skew(forest))  # skweness for forest area
+print('Kurtosis:', stats.kurtosis(forest))  # Kurtosis for forest area
 
 """
 Plotting a grouped bar of CO2 emission for the 7 nations  in 5 years increments
@@ -192,14 +194,14 @@ plt.savefig('co2_barplot.png')
 """
 plotting a line plot showing Trend in Urban Population for the selected countries
 """
-plt.figure(figsize=(10,6))
+plt.figure(figsize=(10, 6))
 plt.style.use('ggplot')
 urban_pop.plot()
 plt.title('Urban Population Trend from 1990-2010', size=15, weight='bold')
 plt.xlabel('Year', weight='bold')
 plt.ylabel('Urban Population', weight='bold')
-plt.xticks([1990,1995,2000,2005,2010])
-plt.legend(bbox_to_anchor=(1.0,1))
+plt.xticks([1990, 1995, 2000, 2005, 2010])
+plt.legend(bbox_to_anchor=(1.0, 1))
 plt.show()
 plt.savefig('urban_lineplot.png')
 
@@ -209,11 +211,12 @@ plotting a line plot showing Trend in Electric power consumption (kWh per capita
 """
 plt.style.use('ggplot')
 electric.plot()
-plt.title('Electricity Consumption per capital from 1990 to 2010', size='12', weight='bold')
+plt.title('Electric power consumption from 1990 to 2010',
+          size='12', weight='bold')
 plt.xlabel('Year', weight='bold')
 plt.ylabel('electric consuption per capital', weight='bold')
-plt.xticks([1990,1995,2000,2005,2010])
-plt.legend(bbox_to_anchor=(1.0,1))
+plt.xticks([1990, 1995, 2000, 2005, 2010])
+plt.legend(bbox_to_anchor=(1.0, 1))
 plt.show()
 plt.savefig('electric_lineplot.png')
 
@@ -221,7 +224,7 @@ plt.savefig('electric_lineplot.png')
 Plotting a scatter plot to show relationship for Co2 emmission and Forest Area for China
 """
 plt.style.use('ggplot')
-plt.scatter(forest_allyears['China'],co2_allyears['China'])
+plt.scatter(forest_allyears['China'], co2_allyears['China'])
 plt.title('Relationship between Forest Area and Co2 emmission in China', size='11')
 plt.xlabel('Forest area (% of land area)', fontsize=10, weight='bold')
 plt.ylabel('Co2 Emmision', fontsize=10, weight='bold')
@@ -234,10 +237,9 @@ Plotting a scatter plot to show relationship for Co2 emmission and Forest Area f
 """
 plt.style.use('ggplot')
 plt.scatter(forest_allyears['Brazil'], co2_allyears['Brazil'])
-plt.title('Relationship between Forest Area and Co2 emmission in Brazil', weight='bold')
+plt.title(
+    'Relationship between Forest Area and Co2 emmission in Brazil', weight='bold')
 plt.xlabel('Forest area (% of land area)', weight='bold')
 plt.ylabel('Co2 Emmision', weight='bold')
 plt.show()
 plt.savefig('scatter_brazil.png')
-
-
