@@ -48,8 +48,7 @@ def read_data(filename, **others):
 
 
 # Reading in our datasets for analysis
-world_data, world_data2 = read_data(
-    r"C:\Users\USER\Desktop\World Bank Data.csv")
+world_data, world_data2 = read_data(r"C:\Users\USER\Desktop\World Bank Data.csv")
 print(world_data)
 
 # For this analysis, we will make do with 4 indicators of choice
@@ -237,8 +236,7 @@ Plotting a scatter plot to show relationship for Co2 emmission and Forest Area f
 """
 plt.style.use('ggplot')
 plt.scatter(forest_allyears['Brazil'], co2_allyears['Brazil'])
-plt.title(
-    'Relationship between Forest Area and Co2 emmission in Brazil', weight='bold')
+plt.title('Relationship between Forest Area and Co2 emmission in Brazil', weight='bold')
 plt.xlabel('Forest area (% of land area)', weight='bold')
 plt.ylabel('Co2 Emmision', weight='bold')
 plt.show()
