@@ -1,4 +1,4 @@
-# Data Visulaization  and Insight Project
+# "Decadal Overview: Crime Statistics and Cases in Bangladesh (2010-2019)"
 The dataset illustrates the crime statistics of various crimes and their crime cases in Bangladesh, 
 a densely populated country in Asia across a decade period, from year 2010 to 2019. To visualize 
 and draw insights from the data,3 types of visualization methods was employed, namely:
